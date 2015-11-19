@@ -1,0 +1,23 @@
+<div class="row collection">
+  {% for program in paginate.collection %}
+    <div class="three columns item-{% cycle '1', '2', '3', '4' %}">
+      <div class='element'>
+          <div class="program-element">
+            <a href="{{program.link}}">
+              <img src="{{program.vertical_image.big}}" class="program-preview"/>
+            </a>
+            <div class="program-title">
+                <a href="{{program.link}}"><b>{{program.title}}</b></a>
+            </div>
+          </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<div class="row">
+  {% if paginate.pages > 1 %}
+    <div class="pagination">
+      {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+    </div>
+  {% endif %}
+</div>

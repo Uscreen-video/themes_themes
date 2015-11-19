@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class='four columns'>
+      <div class="brand">
+       <p style="font-size:14px;"><a href="http://www.marriagetoday.com/about/jimmy-karen/">About MarriageToday</a> | <a href="https://www.marriagetoday.com/giving/share-a-gift/">Donate</a> | <a href="http://www.marriagetoday.com/contact/contact-information/">Contact Us</a> </p>      
+       <p style="font-size:12px;">© 2016 MarriageToday. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="eight columns">
+      <div class="social">
+        {% if settings.data.social.facebook != "" %}
+          <a href='{{settings.data.social.facebook}}' target='_blank'><i class="fa fa-facebook-official"></i></a>
+        {% endif %}
+        {% if settings.data.social.twitter != "" %}
+          <a href='{{settings.data.social.twitter}}' target='_blank'><i class="fa fa-twitter-square"></i></a>
+        {% endif %}
+        {% if settings.data.social.youtube != "" %}
+          <a href='{{settings.data.social.youtube}}' target='_blank'><i class="fa fa-youtube-square"></i></a>
+        {% endif %}
+        {% if settings.data.social.pinterest != "" %}
+          <a href='{{settings.data.social.pinterest}}' target='_blank'><i class="fa fa-pinterest-square"></i></a>
+        {% endif %}
+        {% if settings.data.social.instagram != "" %}
+          <a href='{{settings.data.social.instagram}}' target='_blank'><i class="fa fa-instagram"></i></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

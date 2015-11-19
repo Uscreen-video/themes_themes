@@ -1,0 +1,24 @@
+{% case template %}
+{% when 'index' %}
+  <title>{{store.title}} | {{settings.data.seo.index_page_title}} </title>
+  <meta name="description" content="{{settings.data.seo.index_page_description}}">
+{% when 'program' %}
+  <title>{{store.title}} | {{program.meta_title}} </title>
+  <meta name="description" content="{{program.meta_description}}">
+{% when 'subscriptions' %}
+  <title>{{store.title}} | {{settings.data.seo.subscriptions_page_title}} </title>
+  <meta name="description" content="{{settings.data.seo.subscriptions_page_description}}">
+{% when 'catalog' %}
+  {% if catalog.current_category %}
+    <title>{{store.title}} | {{catalog.current_category.meta_title}} </title>
+    <meta name="description" content="{{catalog.current_category.meta_description}}">
+  {% else %}
+    <title>{{store.title}} | {{settings.data.seo.catalog_page_title}} </title>
+    <meta name="description" content="{{settings.data.seo.catalog_page_description}}">
+  {% endif %}
+{% when 'page' %}
+  <title>{{store.title}} | {{page.meta_title}} </title>
+  <meta name="description" content="{{page.meta_description}}">
+{% else %}
+  <title>{{store.title}}</title>
+{% endcase %}

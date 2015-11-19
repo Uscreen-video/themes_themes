@@ -1,0 +1,85 @@
+{% if store.subscriptions.size > 1 %}
+
+  <section class="subscription-section">
+    <div class="container">
+      <div class="row">
+      
+       <div class="five columns subscription-section__text">
+        <h1>Watch anytime, </ br> anywhere.</h1>
+        <p>
+          Partnership at any level gives you access to over 60 Hours of Marriage-strengthening video teaching. Plus, you’ll have the satisfaction of knowing that your contribution allows us to accomplish our mission of helping every couple succeed in marriage, giving hope to future generations.
+        </p>
+        <p>Partners can watch as much as they want, anytime, anywhere, on nearly any Internet-connected screen.</p>
+       </div>
+       
+       <div class="seven columns subscription-section__table">
+        <div class="five columns">
+          <img src="assets/images/screens.png" alt="" class="subscription-section__image">
+          <div class="row-table">
+            <span>Dream Marriage Library</span> 
+            <span><img src="assets/images/check.png" alt=""></span>
+            <span><img src="assets/images/check.png" alt=""></span>
+          </div>
+          <div class="row-table">
+            <span>Workshops by MarriageToday</span> 
+            <span><img src="assets/images/check.png" alt=""></span>
+            <span><img src="assets/images/check.png" alt=""></span>
+          </div>
+          <div class="row-table">
+            <span>Current TV Series</span> 
+            <span><img src="assets/images/check.png" alt=""></span>
+            <span><img src="assets/images/check.png" alt=""></span>
+          </div>
+          <div class="row-table">
+            <span>XO Marriage Conference</span> 
+            <span></span>
+            <span><img src="assets/images/check.png" alt=""></span>
+          </div>
+          <div class="row-table">
+            <span>Indestructible Marriage Series</span> 
+            <span></span>
+            <span><img src="assets/images/check.png" alt=""></span>
+          </div>
+          <div class="row-table">
+            <span>Return to Intimacy Series</span> 
+            <span></span>
+            <span><img src="assets/images/check.png" alt=""></span>
+          </div>
+          <div class="row-table">
+            <span>New Series Added Monthly</span> 
+            <span></span>
+            <span><img src="assets/images/check.png" alt=""></span>
+          </div>
+        </div>
+        <div class="seven columns">
+          <div class="price-block">
+            {% assign subscription = store.subscriptions[0] %}
+            {% include 'price_block' %}
+            <div class="mobile-block">
+                <span>Dream Marriage Library<img src="assets/images/check.png" alt=""></span>
+                <span>Workshops by MarriageToday<img src="assets/images/check.png" alt=""></span>
+                <span>Current TV Series<img src="assets/images/check.png" alt=""></span> 
+                
+            </div>
+          </div>
+          <div class="price-block">
+            {% assign subscription = store.subscriptions[1] %}
+            {% include 'price_block' %}
+            <div class="mobile-block">
+                <span>Dream Marriage Library<img src="assets/images/check.png" alt=""></span>
+                <span>Workshops by MarriageToday<img src="assets/images/check.png" alt=""></span>
+                <span>Current TV Series<img src="assets/images/check.png" alt=""></span> 
+                <span>XO Marriage Conference<img src="assets/images/check.png" alt=""></span> 
+                <span>Indestructible Marriage Series<img src="assets/images/check.png" alt=""></span>
+                <span>Return to Intimacy Series<img src="assets/images/check.png" alt=""></span>
+                <span>New Series Added Monthly<img src="assets/images/check.png" alt=""></span>
+            </div>
+          </div>
+        </div>
+       </div>
+       
+      </div>
+    </div>
+  </section>
+{% endif %}
+

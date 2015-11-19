@@ -1,0 +1,57 @@
+{% assign access = program | have_access user: user %}
+
+<div class="player-zone">
+  <div class="container">
+    {% if program.chapter_groups.size > 0 %}
+      {% if program.chapter_groups.size > 1 or program.chapter_groups.first.chapters.size > 1 %}
+        <div class='video' style='background-image: url({{program.horizontal_image.big}})'>
+          {{ program | player, with_access: access }}
+        </div>
+        {% include 'chapters' %}
+      {% else %}
+        <div class='full-width-video' style='background-image: url({{program.horizontal_image.big}})'>
+          {{ program | player, with_access: access }}
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="book-preview" style='background-image: url({{program.vertical_image.small}})'>
+      </div>
+    {% endif %}
+  </div>
+</div>
+<div class="action-block">
+  <div class="container">
+    <div class="row">
+      <div class="seven columns">
+        <h1>{{program.title}}</h1>
+      </div>
+      <div class="five columns purchase-action">
+        {% include 'program_actions' %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="eight columns program-info">{{program.description}}
+    </div>
+    <div class="four columns program-info">
+        
+        <a style="cursor:pointer;" href="http://store.marriagetoday.com/"><img src="http://www.marriagetoday.com/_media/images/uscreen/usceen-ad-store.jpg"/></a>
+    </div>
+    <div class="four columns">
+      {% if access %}
+        {% if program.assets.size > 0 %}
+          <div class="assets-block">
+            <ul class="assets-list">
+              <div class="assets-title">Attached Files</div>
+              {% for asset in program.assets %}
+                <li><a href="{{asset.download_url}}">{{asset.name}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>

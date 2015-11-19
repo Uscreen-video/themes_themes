@@ -1,0 +1,42 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="row">
+      <div class="three columns">
+        <div class="brand">
+          <a href="/">{{ store.logo.big | image_tag, alt: store.title }}</a>
+        </div>
+      </div>
+      <div class="nine columns">
+        <div id="nav">
+          <ul class="navbar-list">
+            <li class="navbar-item"><a href="/catalog" class="navbar-link">Video Library</a></li>
+             <li class="navbar-item"><a href="#" class="navbar-link">Store</a></li>
+            {% if user %}
+              {% comment %}
+                In this place you can put all private links you have. For example 'My videos'
+              {% endcomment %}
+              <li class="navbar-item"><a href="/programs" class="navbar-link">My Videos</a></li>
+              <li class="navbar-item"><a href="/payments" class="navbar-link">Payments</a></li>
+            {% endif %}
+            {% for page in store.pages %}
+              <li class="navbar-item"><a href="pages/{{page.slug}}"
+                                         class="navbar-link">{{page.title}}</a></li>
+          {% endfor %}
+            {% if user %}
+              <li class="navbar-item navbar-right">
+                <a href="/sign_out" data-method='DELETE' class="navbar-link" alt="Sign Out">
+                  <i class="fa fa-sign-out"></i> <span class="mobile-show">Sign Out</span>
+                </a>
+              </li>
+              <li class="navbar-item navbar-right mobile-hide">
+                <div class="welcome-message">Signed In</div>
+              </li>
+            {% else %}
+              <li class="navbar-item navbar-right"><a href="/sign_in" class="button">Sign In</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

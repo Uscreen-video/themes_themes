@@ -1,0 +1,17 @@
+<div class="row">
+  <div class='category-name'>{{category.title}}</div>
+  <div class="courses">
+    {% for program in category.programs %}
+      <div class='element'>
+          <div class="program-element">
+            <a href="{{program.link}}">
+              <img src="{{program.vertical_image.big}}" class="program-preview"/>
+            </a>
+            <div class="program-title">
+                <a href="{{program.link}}"><b>{{program.title}}</b></a>
+            </div>
+          </div>
+      </div>
+    {% endfor %}
+   </div>
+</div>

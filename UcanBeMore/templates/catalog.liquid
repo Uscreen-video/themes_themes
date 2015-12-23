@@ -1,0 +1,24 @@
+{% if catalog.current_category %}
+  {% assign programs = catalog.current_category.programs %}
+{% else %}
+  {% assign programs = catalog.programs %}
+{% endif %}
+<div class="container">
+  <div class="eight columns categories-list">
+    Categories:
+    <a href="/catalog" class="{% unless catalog.current_category %}active{% endunless %}">All</a>
+    {% for category in catalog.categories %}
+      <a href="/catalog/{{category.slug}}" class="{% if catalog.current_category.slug == category.slug %}active{% endif %}">{{category.title}}</a>
+    {% endfor %}
+  </div>
+  <div class="four columns right">
+    <div class="search-top">
+      {% include 'search_form' %}
+    </div>
+  </div>
+</div>
+<div class="container">
+    {% paginate programs by 12 %}
+      {% include 'program_list' %}
+    {% endpaginate %}
+</div>

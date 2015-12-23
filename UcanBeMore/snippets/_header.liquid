@@ -1,0 +1,52 @@
+{% if user %}
+  {% assign brand = "three columns" %}
+  {% assign navigation = "nine columns" %}
+{% else %}
+  {% assign brand = "five columns" %}
+  {% assign navigation = "seven columns" %}
+{% endif %}
+<nav class="navbar">
+  <div class="container">
+    <div class="row">
+      <div class="{{brand}}">
+        <div class="brand">
+          <a href="/">{{ store.logo.big | image_tag, alt: store.title }}</a>
+        </div>
+        {% unless user %}
+          <a href="/subscriptions" class="btn-subcribe">Start My Subscription</a>
+        {% endunless %}
+      </div>
+      <div class="{{navigation}}">
+        <div id="nav">
+          <ul class="navbar-list">
+            <li class="navbar-item"><a href="/catalog" class="navbar-link">Catalog</a></li>
+            {% if user %}
+              {% comment %}
+                In this place you can put all private links you have. For example 'My videos'
+              {% endcomment %}
+              <li class="navbar-item"><a href="/programs" class="navbar-link">My Videos</a></li>
+              <li class="navbar-item"><a href="/payments" class="navbar-link">Payments</a></li>
+            {% endif %}
+            {% for page in store.pages %}
+              <li class="navbar-item"><a href="/pages/{{page.slug}}"
+                                        class="navbar-link">{{page.title}}</a></li>
+          {% endfor %}
+            {% if user %}
+              <li class="navbar-item navbar-right">
+                <a href="/sign_out" data-method='DELETE' class="navbar-link
+                  sign-out" alt="Sign Out">
+                   [ Log Out ]
+                </a>
+              </li>
+              <li class="navbar-item navbar-right mobile-hide">
+                <div class="welcome-message">Welcome, {{user.name}}!</div>
+              </li>
+            {% else %}
+              <li class="navbar-item navbar-right"><a href="/sign_in" class="button">Sign In</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

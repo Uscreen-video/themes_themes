@@ -1,0 +1,26 @@
+.slick-prev, .slick-next {
+  position: absolute; display: block;
+  height: 200px; width: 30px;
+  line-height: 0; font-size: 0;
+  cursor: pointer;
+  background: transparent; color: transparent; top: 50%; padding: 0; border: none; outline: none; }
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus { outline: none; background: transparent; color: transparent; }
+.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before { opacity: 1; }
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before { opacity: 1; }
+.slick-prev:before, .slick-next:before {
+  font-family: FontAwesome;
+  font-size: 30px;
+  line-height: 1;
+  color: black; opacity: 0.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev:before { content: "\f053"; }
+[dir="rtl"] .slick-prev:before { content: "\f054"; }
+.slick-prev { left: -50px; top: 65px; z-index: 1000; }
+[dir="rtl"] .slick-prev {  right: 0px; top: 65px; }
+
+.slick-next { right: -55px; top: 65px; }
+[dir="rtl"] .slick-next { left: 5px; top: 65px; right: auto; }
+.slick-next:before { content: "\f054"; }
+[dir="rtl"] .slick-next:before { content: "\f053"; }

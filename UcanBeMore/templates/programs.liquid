@@ -1,0 +1,5 @@
+<div class="container">
+    {% paginate user.programs by 12 %}
+      {% include 'program_list' %}
+    {% endpaginate %}
+</div>

@@ -1,0 +1,21 @@
+{% assign position = 0 %}
+<div class="playlist">
+  {% for group in program.chapter_groups %}
+    <div class="group-item">{{group.title}}</div>
+    {% for chapter in group.chapters %}
+      {% assign position = position | plus: 1 %}
+      {% unless chapter.free or access %}
+        {% assign locked = 'locked' %}
+      {% endunless %}
+      <a class="list-item" id='chapter{{chapter.id}}' onclick='playChapter({{chapter.id}})' {% if locked %} disabled='disabled' {% endif %}>
+        <div class="title">
+          <span class="position">{{position}}</span>
+          {{chapter.title}}
+          {% if locked %}
+            <i class="fa fa-lock"></i>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  {% endfor %}
+</div>

@@ -1,0 +1,8 @@
+{% include 'banner' %}
+<div class="container">
+  {% for category in catalog.categories %}
+    {% if category.programs_count > 0 %}
+      {% include 'swipe_category' %}
+    {% endif %}
+  {% endfor %}
+</div>

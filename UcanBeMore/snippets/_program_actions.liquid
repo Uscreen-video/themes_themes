@@ -1,0 +1,8 @@
+{% unless access %}
+  {% if program.subscriptions.size > 0 %}
+    <a href="/subscriptions" class="button button-primary">Subscribe</a>
+  {% endif %}
+  {% if program.price > 0 %}
+    <a href="{{ program || purchase_url}}" class="button button-success">Buy {{program.price | price, store.currency }}</a>
+  {% endif %}
+{% endunless %}

@@ -1,0 +1,65 @@
+{ "base_colors": {
+    "background_color": "#FFF",
+    "text_color": "#222",
+    "link_color": "#1EAEDB",
+    "link_active_color": "#1EAEDB",
+    "attention_color": "#2db951",
+    "attention_color_hover": "#008a22"
+  },
+  "header": {
+    "link_color": "#222",
+    "link_active_color": "#1EAEDB",
+    "text_color": "#222",
+    "background_color": "#FFF"
+  },
+  "footer": {
+    "background_color": "#222",
+    "color": "#FFF",
+    "link_color": "#FFF",
+    "link_active_color": "#FFF"
+  },
+  "player": {
+    "block_background_color": "#111",
+    "background_color": "#222",
+    "button_color": "#fff",
+    "hover_button_color": "#2ecc71"
+  },
+  "chapter": {
+    "background_color": "#FFF",
+    "border_color": "#F2F3F4",
+    "text_color": "#4db1dc",
+    "position_color": "#111",
+    "group_text_color": "#111",
+    "active_background_color": "#4db1dc",
+    "active_border_color": "#3498db",
+    "active_text_color": "#FFF",
+    "hover_background_color": "#F2F3F4",
+    "hover_border_color": "#dfe0e1",
+    "hover_text_color": "#2ecc71"
+  },
+  "pagination":
+    {
+      "background_color": "#f2f2f2"
+    },
+  "seo":
+  {
+    "index_page_title": "Welcome!",
+    "index_page_description": "Main page",
+    "subscriptions_page_title": "Subscribe!",
+    "subscriptions_page_description": "Subscriptions page",
+    "catalog_page_title": "Catalog",
+    "catalog_page_description": "Catalog page description"
+  },
+  "social":
+  {
+    "facebook": "https://facebook.com",
+    "twitter": "https://twitter.com",
+    "youtube": "https://youtube.com",
+    "instagram": "https://instagram.com",
+    "pinterest": ""
+  },
+  "images": {
+    "subscription_banner_image": "/assets/images/sample-background.png",
+    "banner_image": "/assets/images/sample-background.png"
+  }
+}

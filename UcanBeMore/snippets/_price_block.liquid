@@ -1,0 +1,14 @@
+<div class="title">{{subscription.title}}</div>
+<div class="price">
+  {% assign term = subscription.terms.first %}
+  {{ term.price | price, store.currency }}
+</div>
+<div class="price-period">
+  {{term.title}}
+</div>
+<div class="advantage">Unlimited Access</div>
+<div class="advantage">Watch on Mobile</div>
+<div class="advantage">{{subscription.programs_count}} programs</div>
+<div class="subscribe-block">
+  <a href="{{ subscription | subscribe_url }}" class="button button-primary">Subscribe</a>
+</div>

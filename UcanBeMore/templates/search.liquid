@@ -1,0 +1,33 @@
+{% if search.performed %}
+  <div class="container">
+    {% if search.results_count > 0 %}
+      <div class="container">
+          <div class="six columns categories-list">
+            Results: <b>{{search.results_count}}</b>
+          </div>
+          <div class="six columns right search-top">
+            <div class="search-top">
+              {% include 'search_form' %}
+            </div>
+          </div>
+          {% paginate search.results by 12 %}
+            {% include 'program_list' %}
+          {% endpaginate %}
+      </div>
+    {% else %}
+      <div class="not-found">
+        Your search for <b>"{{search.condition}}"</b> did not match any results.
+      </div>
+      <div class="big-search">
+        {% include 'search_form' %}
+      </div>
+    {% endif %}
+  </div>
+{% else %}
+  <div class="not-found">
+    Your search condition is not performed.
+  </div>
+  <div class="big-search">
+    {% include 'search_form' %}
+  </div>
+{% endif %}

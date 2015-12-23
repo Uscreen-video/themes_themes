@@ -1,0 +1,74 @@
+<main class="main-wrapper">
+
+		<!--Index content -->
+		<section class="content-s">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="eight columns devises">
+	      {% assign subscription = store.subscriptions.first %}
+						<div class="iphone">
+							<svg viewBox="0 0 48 100"><path class="ps-outline" d="M40,1V0.5C40,0.2,39.8,0,39.5,0h-6.6c-0.3,0-0.5,0.2-0.5,0.5V1H9C4.6,1,1,4.6,1,9v4H0.5C0.2,13,0,13.2,0,13.5v4
+	            C0,17.8,0.2,18,0.5,18H1v3H0.5C0.2,21,0,21.2,0,21.5v6C0,27.8,0.2,28,0.5,28H1v3H0.5C0.2,31,0,31.2,0,31.5v6C0,37.8,0.2,38,0.5,38H1
+	            v54c0,4.4,3.6,8,8,8h31c4.4,0,8-3.6,8-8V9C48,4.6,44.4,1,40,1z"></path><path class="ps-shape" d="M29,10c0,0.6-0.4,1-1,1h-7c-0.6,0-1-0.4-1-1l0,0c0-0.6,0.4-1,1-1h7C28.6,9,29,9.4,29,10L29,10z"></path><circle class="ps-shape" cx="24.5" cy="6.5" r="1.5"></circle><circle class="ps-shape" cx="24.5" cy="93.5" r="4.5"></circle>
+	            <rect class="ps-maskout" x="4" y="14" width="41" height="73"></rect>
+	            </svg>
+	            <img src="{{ subscription.programs[0].horizontal_image.small }}" class="iphone__image" alt="">
+						</div>
+						<div class="ipad">
+							<svg viewBox="0 0 100 77"><path class="ps-outline" d="M96,0H4C1.8,0,0,1.8,0,4v69c0,2.2,1.8,4,4,4h92c2.2,0,4-1.8,4-4V4C100,1.8,98.2,0,96,0z"></path><circle class="ps-shape" cx="4.5" cy="38.5" r="0.5"></circle><circle class="ps-shape" cx="95.5" cy="38.5" r="2.5"></circle><rect class="ps-maskout" x="9" y="8" width="82" height="61"></rect></svg>
+							<img src="{{ subscription.programs[1].horizontal_image.big }}" class="ipad__image" alt="">
+						</div>
+						<div class="monitor">
+							<svg viewBox="0 0 100 62"><polygon class="ps-outline" points="100,1 39,1 0,1 0,59 20,59 16,61 16,62 84,62 84,61 80,59 100,59"></polygon><rect class="ps-maskout" x="2" y="3" width="96" height="54"></rect></svg>
+							<img src="{{ subscription.programs[2].horizontal_image.big }}" class="monitor__image" alt="">
+						</div>
+
+					</div>
+
+					<div class="four columns">
+					{% assign term = subscription.terms.first %}
+						<h1 class="subscription__title">
+							Watch Anytime, Anywhere.
+							<span>
+								Only {{ term.price | price, store.currency }}
+							</span>
+						</h1>
+						<h2 class="subscription__subtitle">
+							Subscribe today for unlimited access to {{ subscription.programs_count }} programs.
+						</h2>
+						<p class="subscription__paragraph">
+							No commitments. Cancel anytime.
+						</p>
+						<a href="{{ subscription | subscribe_url }}" class="btn-subcribe">Start My Subscription</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="twelve columns">
+						<p class="subscription__paragraph">
+							Unlimited streaming of all subscription-enabled videos from MarriageToday on the following supported devices: iPhone, iPad, AppleTV (via AirPlay), your Computer, Android Phones and Tablets running Android OS KitKat (version 4.3) or higher & Google Chrome, and ChromeCast.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="three columns subscription-white-column">
+						<h3>No Limits</h3>
+						<p>
+							Watch unlimited streaming videos – anytime, anywhere, from any supported device.
+						</p>
+					</div>
+					<div class="three columns subscription-white-column">
+						<h3>Tons of Content</h3>
+						<p>Enjoy with access to {{ subscription.programs_count }} programs!</p>
+					</div>
+					<div class="three columns subscription-white-column">
+						<h3>Exclusive Access Level</h3>
+						<p>Get subscriber-only access to exclusive video content when available.</p>
+					</div>
+					<div class="three columns subscription-white-column">
+						<h3>Support {{ store.title }}</h3>
+						<p>Your subscription helps us continue to provide great videos. We appreciate your support.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
